@@ -13,10 +13,9 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Repository
 
         public ShopDBContext(DbContextOptions options) : base(options)
         {
-            Database.EnsureCreated();
         }
 
-        public static void EndureInitialized(ShopDBContext context)
+        public static void EnsureInitialized(ShopDBContext context)
         {
             if (!context.Phones.Any())
             {
