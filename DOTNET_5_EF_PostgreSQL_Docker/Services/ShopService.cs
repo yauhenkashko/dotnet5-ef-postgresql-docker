@@ -10,7 +10,7 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Services
     public interface IShopService
     {
         IList<PhoneViewModel> GetPhones();
-        void GetOrders();
+        IList<OrderViewModel> GetOrders();
     }
 
     public class ShopService : IShopService
@@ -31,9 +31,12 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Services
             return result;
         }
 
-        public void GetOrders()
+        public IList<OrderViewModel> GetOrders()
         {
+            var source = _repository.GetOrders(true);
+            var result = _mapper.Map<IList<OrderViewModel>>(source);
 
+            return result;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Repository
             Database.EnsureCreated();
         }
 
-        public static async Task EndureInitialized(ShopDBContext context)
+        public static void EndureInitialized(ShopDBContext context)
         {
             if (!context.Phones.Any())
             {
@@ -39,7 +39,7 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Repository
                         Price = 250
                     });
 
-                await context.SaveChangesAsync();
+                context.SaveChanges();
             }
         }
     }

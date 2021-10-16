@@ -11,7 +11,7 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Repository.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MobileId { get; set; }
+        public int PhoneId { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public int Price { get; set; }
