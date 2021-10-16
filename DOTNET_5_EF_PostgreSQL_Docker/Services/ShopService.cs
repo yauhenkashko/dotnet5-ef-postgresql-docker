@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using AutoMapper;
 using DOTNET_5_EF_PostgreSQL_Docker.Models;
 using DOTNET_5_EF_PostgreSQL_Docker.Repository;
@@ -11,6 +10,7 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Services
     {
         IList<PhoneViewModel> GetPhones();
         IList<OrderViewModel> GetOrders();
+        void SaveOrder(OrderViewModel order);
     }
 
     public class ShopService : IShopService
@@ -37,6 +37,12 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Services
             var result = _mapper.Map<IList<OrderViewModel>>(source);
 
             return result;
+        }
+
+        public void SaveOrder(OrderViewModel order)
+        {
+            var model = _mapper.Map<Order>(order);
+            _repository.SaveOrder(model);
         }
     }
 }

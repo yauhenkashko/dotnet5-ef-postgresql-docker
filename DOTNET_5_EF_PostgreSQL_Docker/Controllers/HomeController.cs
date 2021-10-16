@@ -20,6 +20,8 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Title = "Phones and orders";
+
             var phones = _shopService.GetPhones();
             var orders = _shopService.GetOrders();
             var model = new PhoneOrderViewModel

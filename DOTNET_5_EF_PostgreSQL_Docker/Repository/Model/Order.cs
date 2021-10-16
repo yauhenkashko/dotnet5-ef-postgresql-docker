@@ -15,6 +15,7 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Repository.Model
         public string UserName { get; set; }
         public string ContactPhone { get; set; }
 
+        public int PhoneId { get; set; }
         [ForeignKey(nameof(Model.Phone.PhoneId))]
         public Phone Phone { get; set; }
     }

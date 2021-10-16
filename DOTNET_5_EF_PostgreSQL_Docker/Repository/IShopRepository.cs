@@ -10,6 +10,7 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Repository
     {
         IList<Phone> GetPhones();
         IList<Order> GetOrders(bool includePhoneInfo);
+        void SaveOrder(Order model);
     }
 
     public class ShopRepository : IShopRepository
@@ -31,6 +32,12 @@ namespace DOTNET_5_EF_PostgreSQL_Docker.Repository
         {
             var orders = _context.Orders.Include(x => x.Phone).ToList();
             return orders;
+        }
+
+        public void SaveOrder(Order model)
+        {
+            _context.Orders.Add(model);
+            _context.SaveChanges();
         }
     }
 }

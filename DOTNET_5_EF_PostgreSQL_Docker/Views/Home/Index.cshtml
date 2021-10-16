@@ -8,6 +8,7 @@
     Layout = "_Layout";
 }
 
+<h2>Available products:</h2>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -47,12 +48,38 @@
 {
     <h2>Orders:</h2>
 
-    @foreach (var item in Model.Orders)
-    {
-        <label asp-for="@item.UserName"></label>
-        <label asp-for="@item.ContactPhone"></label>
-        <label asp-for="@item.Manufacturer"></label>
-        <label asp-for="@item.Model"></label>
-        <label asp-for="@item.Price"></label>
-    }
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-6">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">@nameof(OrderViewModel.UserName)</th>
+                            <th scope="col">@nameof(OrderViewModel.ContactPhone)</th>
+                            <th scope="col">@nameof(OrderViewModel.Manufacturer)</th>
+                            <th scope="col">@nameof(OrderViewModel.Model)</th>
+                            <th scope="col">@nameof(OrderViewModel.Price)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Orders)
+                        {
+                            <tr>
+                                <th scope="row">@item.UserName</th>
+                                <td>@item.ContactPhone</td>
+                                <td>@item.Manufacturer</td>
+                                <td>@item.Model</td>
+                                <td>@item.Price.ToString("C")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
 }
