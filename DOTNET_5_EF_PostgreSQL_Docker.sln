@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DOTNET_5_EF_PostgreSQL_Docker", "DOTNET_5_EF_PostgreSQL_Docker\DOTNET_5_EF_PostgreSQL_Docker.csproj", "{9C37C62E-F385-4582-B9F1-D6FC553643C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DOTNET_5_EF_PostgreSQL_Docker", "DOTNET_5_EF_PostgreSQL_Docker\DOTNET_5_EF_PostgreSQL_Docker.csproj", "{9C37C62E-F385-4582-B9F1-D6FC553643C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{EDE9688F-4A3B-4094-A870-22BBF916A66E}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+		dev_cert.txt = dev_cert.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PosgreSQL", "PosgreSQL", "{103DD7A8-11C3-4B4E-A99A-9AD376EAB5EB}"
+	ProjectSection(SolutionItems) = preProject
+		PostgreSQL\Dockerfile = PostgreSQL\Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +29,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{103DD7A8-11C3-4B4E-A99A-9AD376EAB5EB} = {EDE9688F-4A3B-4094-A870-22BBF916A66E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D43289C3-02AC-46D5-8E27-62A6401EA9BB}

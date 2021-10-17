@@ -1,0 +1,6 @@
+Generate dev cert:	dotnet dev-certs https -ep %USERPROFILE%\.aspnet\https\aspnetapp.pfx -p mycertpassword
+Set as trusted:		dotnet dev-certs https --trust
+To run container:	docker run --rm -it -p 8000:80 -p 8001:443 -e ASPNETCORE_URLS="https://+;http://+" -e ASPNETCORE_HTTPS_PORT=8001 -e ASPNETCORE_Kestrel__Certificates__Default__Password="mycertpassword" -e ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx yourImageName:latest
+
+aspnetapp.pfx must be copied or shared using volume (in current example certificate located under "/https/" container folder)
+in current example certificate is copied using Docker file

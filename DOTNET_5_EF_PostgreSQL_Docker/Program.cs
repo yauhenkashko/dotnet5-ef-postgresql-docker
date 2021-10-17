@@ -34,8 +34,15 @@ namespace DOTNET_5_EF_PostgreSQL_Docker
                 {
                     using (var context = services.GetRequiredService<ShopDBContext>())
                     {
-                        context.Database.Migrate();
-                        //context.Database.EnsureCreated();
+                        if (context.Database.IsRelational())
+                        {
+                            context.Database.Migrate();
+                        }
+                        else
+                        {
+                            context.Database.EnsureCreated();
+                        }
+
                         ShopDBContext.EnsureInitialized(context);
                     }
                 }
