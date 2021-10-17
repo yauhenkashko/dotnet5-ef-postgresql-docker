@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   web-shop:
-    #build: . #uncomment this if need to build
+    build: . #uncomment this if need to build
     image: web-shop:latest
     expose:
       - "8080"
