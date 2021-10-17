@@ -27,8 +27,8 @@ namespace DOTNET_5_EF_PostgreSQL_Docker
             services.AddTransient<IShopService, ShopService>();
             services.AddTransient<IShopRepository, ShopRepository>();
 
-            services.AddDbContext<ShopDBContext>(o => o.UseInMemoryDatabase("Phones"));
-            //services.AddDbContext<ShopDBContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreSQL")));
+            //services.AddDbContext<ShopDBContext>(o => o.UseInMemoryDatabase("Phones"));
+            services.AddDbContext<ShopDBContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreSQL")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

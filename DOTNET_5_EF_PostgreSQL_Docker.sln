@@ -9,11 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	ProjectSection(SolutionItems) = preProject
 		Dockerfile = Dockerfile
 		dev_cert.txt = dev_cert.txt
+		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PosgreSQL", "PosgreSQL", "{103DD7A8-11C3-4B4E-A99A-9AD376EAB5EB}"
 	ProjectSection(SolutionItems) = preProject
-		PostgreSQL\Dockerfile = PostgreSQL\Dockerfile
+		PostgreSQL\docker-compose.yml = PostgreSQL\docker-compose.yml
 	EndProjectSection
 EndProject
 Global
