@@ -14,5 +14,5 @@ services:
       - ASPNETCORE_HTTPS_PORT=8001
       - ASPNETCORE_Kestrel__Certificates__Default__Password=mycertpassword
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
-
+      - ConnectionStrings__PostgreSQL=Server=192.168.0.105;Port=5432;Userid=postgres;Password=postgres;Pooling=false;MinPoolSize=1;MaxPoolSize=20;Timeout=15;SslMode=Disable;Database=Shop
 #To run docker compose:     docker-compose -f "docker-compose.yml" up -d
